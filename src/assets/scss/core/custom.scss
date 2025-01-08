@@ -1,0 +1,58 @@
+// pointer
+.cursor-pointer {
+    cursor: pointer;
+}
+
+// width
+.w-50px {
+    width: 50px;
+}
+.w-100px {
+    width: 100px;
+}
+
+// padding
+.p-x-24px {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.p-12-8 {
+    padding: 12px 8px;
+}
+
+.p-t-14 {
+    padding-top: 14px;
+}
+
+// margin
+.m-x-24px {
+    margin-left: 24px;
+    margin-right: 24px 
+}
+
+.m-t-8 {
+    margin-top: 8px;
+}
+
+.m-b-16 {
+    margin-bottom: 16px;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+// border
+
+.border-b-1 {
+    border-bottom: 1px solid;
+}
+
+.border-color-gray {
+    border-color: #c4c6d0;
+}

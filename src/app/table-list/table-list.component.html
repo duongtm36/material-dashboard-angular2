@@ -1,276 +1,301 @@
 <div class="main-content">
   <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-12">
-              <div class="card">
-                  <div class="card-header card-header-danger">
-                      <h4 class="card-title ">Simple Table</h4>
-                      <p class="card-category"> Here is a subtitle for this table</p>
-                  </div>
-                  <div class="card-body">
-                      <div class="table-responsive">
-                          <table class="table">
-                              <thead class=" text-primary">
-                                  <th>
-                                      ID
-                                  </th>
-                                  <th>
-                                      Name
-                                  </th>
-                                  <th>
-                                      Country
-                                  </th>
-                                  <th>
-                                      City
-                                  </th>
-                                  <th>
-                                      Salary
-                                  </th>
-                              </thead>
-                              <tbody>
-                                  <tr>
-                                      <td>
-                                          1
-                                      </td>
-                                      <td>
-                                          Dakota Rice
-                                      </td>
-                                      <td>
-                                          Niger
-                                      </td>
-                                      <td>
-                                          Oud-Turnhout
-                                      </td>
-                                      <td class="text-primary">
-                                          $36,738
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          2
-                                      </td>
-                                      <td>
-                                          Minerva Hooper
-                                      </td>
-                                      <td>
-                                          Curaçao
-                                      </td>
-                                      <td>
-                                          Sinaai-Waas
-                                      </td>
-                                      <td class="text-primary">
-                                          $23,789
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          3
-                                      </td>
-                                      <td>
-                                          Sage Rodriguez
-                                      </td>
-                                      <td>
-                                          Netherlands
-                                      </td>
-                                      <td>
-                                          Baileux
-                                      </td>
-                                      <td class="text-primary">
-                                          $56,142
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          4
-                                      </td>
-                                      <td>
-                                          Philip Chaney
-                                      </td>
-                                      <td>
-                                          Korea, South
-                                      </td>
-                                      <td>
-                                          Overland Park
-                                      </td>
-                                      <td class="text-primary">
-                                          $38,735
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          5
-                                      </td>
-                                      <td>
-                                          Doris Greene
-                                      </td>
-                                      <td>
-                                          Malawi
-                                      </td>
-                                      <td>
-                                          Feldkirchen in Kärnten
-                                      </td>
-                                      <td class="text-primary">
-                                          $63,542
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          6
-                                      </td>
-                                      <td>
-                                          Mason Porter
-                                      </td>
-                                      <td>
-                                          Chile
-                                      </td>
-                                      <td>
-                                          Gloucester
-                                      </td>
-                                      <td class="text-primary">
-                                          $78,615
-                                      </td>
-                                  </tr>
-                              </tbody>
-                          </table>
-                      </div>
-                  </div>
-              </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div
+            class="card-header card-header-danger d-flex justify-content-between align-items-center"
+          >
+            <div>
+              <h4 class="card-title">Demo Project</h4>
+              <p class="card-category">08/01/2025</p>
+            </div>
+            <span class="cursor-pointer" (click)="handleExpansion()">
+              <i class="material-icons icon" [class.rotate]="isExpansion"
+                >keyboard_arrow_down</i
+              >
+            </span>
           </div>
-          <div class="col-md-12">
-              <div class="card card-plain">
-                  <div class="card-header card-header-danger">
-                      <h4 class="card-title mt-0"> Table on Plain Background</h4>
-                      <p class="card-category"> Here is a subtitle for this table</p>
+          <div class="card-body">
+            <div
+              class="table-responsive expand-box"
+              [class.expanded]="isExpansion"
+            >
+              <div class="w-100 p-12-8 border-b-1 border-color-gray">
+                 
+                <div class="d-flex w-100" [class.m-b-16]="isExpansionSub"  (click)="handleExpansionSub()">
+                  <span class="w-50px">1</span>
+                  <div class="flex-1">Dakota Rice Dakota Rice</div>
+                  <span
+                    class="cursor-pointer w-100px d-flex justify-content-center"
+                  >
+                    <i
+                      class="material-icons"
+                      style="color: #54ba4a; margin-right: 8px"
+                      >border_color</i
+                    >
+                    <i class="material-icons" style="color: #fc4438">delete</i>
+                  </span>
+                </div>
+                <div
+                  [class.display-none]="!isExpansionSub"
+                  [class.display-contents]="isExpansionSub"
+                  class="d-flex flex-col w-100 p-t-14 expand-box-sub"
+                >
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
                   </div>
-                  <div class="card-body">
-                      <div class="table-responsive">
-                          <table class="table table-hover">
-                              <thead class="">
-                                  <th>
-                                      ID
-                                  </th>
-                                  <th>
-                                      Name
-                                  </th>
-                                  <th>
-                                      Country
-                                  </th>
-                                  <th>
-                                      City
-                                  </th>
-                                  <th>
-                                      Salary
-                                  </th>
-                              </thead>
-                              <tbody>
-                                  <tr>
-                                      <td>
-                                          1
-                                      </td>
-                                      <td>
-                                          Dakota Rice
-                                      </td>
-                                      <td>
-                                          Niger
-                                      </td>
-                                      <td>
-                                          Oud-Turnhout
-                                      </td>
-                                      <td>
-                                          $36,738
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          2
-                                      </td>
-                                      <td>
-                                          Minerva Hooper
-                                      </td>
-                                      <td>
-                                          Curaçao
-                                      </td>
-                                      <td>
-                                          Sinaai-Waas
-                                      </td>
-                                      <td>
-                                          $23,789
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          3
-                                      </td>
-                                      <td>
-                                          Sage Rodriguez
-                                      </td>
-                                      <td>
-                                          Netherlands
-                                      </td>
-                                      <td>
-                                          Baileux
-                                      </td>
-                                      <td>
-                                          $56,142
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          4
-                                      </td>
-                                      <td>
-                                          Philip Chaney
-                                      </td>
-                                      <td>
-                                          Korea, South
-                                      </td>
-                                      <td>
-                                          Overland Park
-                                      </td>
-                                      <td>
-                                          $38,735
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          5
-                                      </td>
-                                      <td>
-                                          Doris Greene
-                                      </td>
-                                      <td>
-                                          Malawi
-                                      </td>
-                                      <td>
-                                          Feldkirchen in Kärnten
-                                      </td>
-                                      <td>
-                                          $63,542
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          6
-                                      </td>
-                                      <td>
-                                          Mason Porter
-                                      </td>
-                                      <td>
-                                          Chile
-                                      </td>
-                                      <td>
-                                          Gloucester
-                                      </td>
-                                      <td>
-                                          $78,615
-                                      </td>
-                                  </tr>
-                              </tbody>
-                          </table>
-                      </div>
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
                   </div>
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
+                  </div>
+                </div>
               </div>
+              <div class="w-100 p-12-8 border-b-1 border-color-gray">
+                 
+                <div class="d-flex w-100" [class.m-b-16]="isExpansionSub"  (click)="handleExpansionSub()">
+                  <span class="w-50px">1</span>
+                  <div class="flex-1">Dakota Rice Dakota Rice</div>
+                  <span
+                    class="cursor-pointer w-100px d-flex justify-content-center"
+                  >
+                    <i
+                      class="material-icons"
+                      style="color: #54ba4a; margin-right: 8px"
+                      >border_color</i
+                    >
+                    <i class="material-icons" style="color: #fc4438">delete</i>
+                  </span>
+                </div>
+                <div
+                  [class.display-none]="!isExpansionSub"
+                  [class.display-contents]="isExpansionSub"
+                  class="d-flex flex-col w-100 p-t-14 expand-box-sub"
+                >
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
+                  </div>
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
+                  </div>
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-100 p-12-8 border-b-1 border-color-gray">
+                 
+                <div class="d-flex w-100" [class.m-b-16]="isExpansionSub"  (click)="handleExpansionSub()">
+                  <span class="w-50px">1</span>
+                  <div class="flex-1">Dakota Rice Dakota Rice</div>
+                  <span
+                    class="cursor-pointer w-100px d-flex justify-content-center"
+                  >
+                    <i
+                      class="material-icons"
+                      style="color: #54ba4a; margin-right: 8px"
+                      >border_color</i
+                    >
+                    <i class="material-icons" style="color: #fc4438">delete</i>
+                  </span>
+                </div>
+                <div
+                  [class.display-none]="!isExpansionSub"
+                  [class.display-contents]="isExpansionSub"
+                  class="d-flex flex-col w-100 p-t-14 expand-box-sub"
+                >
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
+                  </div>
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
+                  </div>
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
       </div>
+      <div class="col-md-12">
+        <div class="card">
+          <div
+            class="card-header card-header-danger d-flex justify-content-between align-items-center"
+          >
+            <div>
+              <h4 class="card-title">Demo Project</h4>
+              <p class="card-category">08/01/2025</p>
+            </div>
+            <span class="cursor-pointer" (click)="handleExpansion()">
+              <i class="material-icons icon" [class.rotate]="isExpansion"
+                >keyboard_arrow_down</i
+              >
+            </span>
+          </div>
+          <div class="card-body">
+            <div
+              class="table-responsive expand-box"
+              [class.expanded]="isExpansion"
+            >
+              <div class="w-100 p-12-8 border-b-1 border-color-gray">
+                 
+                <div class="d-flex w-100" [class.m-b-16]="isExpansionSub"  (click)="handleExpansionSub()">
+                  <span class="w-50px">1</span>
+                  <div class="flex-1">Dakota Rice Dakota Rice</div>
+                  <span
+                    class="cursor-pointer w-100px d-flex justify-content-center"
+                  >
+                    <i
+                      class="material-icons"
+                      style="color: #54ba4a; margin-right: 8px"
+                      >border_color</i
+                    >
+                    <i class="material-icons" style="color: #fc4438">delete</i>
+                  </span>
+                </div>
+                <div
+                  [class.display-none]="!isExpansionSub"
+                  [class.display-contents]="isExpansionSub"
+                  class="d-flex flex-col w-100 p-t-14 expand-box-sub"
+                >
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
+                  </div>
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
+                  </div>
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-100 p-12-8 border-b-1 border-color-gray">
+                 
+                <div class="d-flex w-100" [class.m-b-16]="isExpansionSub"  (click)="handleExpansionSub()">
+                  <span class="w-50px">1</span>
+                  <div class="flex-1">Dakota Rice Dakota Rice</div>
+                  <span
+                    class="cursor-pointer w-100px d-flex justify-content-center"
+                  >
+                    <i
+                      class="material-icons"
+                      style="color: #54ba4a; margin-right: 8px"
+                      >border_color</i
+                    >
+                    <i class="material-icons" style="color: #fc4438">delete</i>
+                  </span>
+                </div>
+                <div
+                  [class.display-none]="!isExpansionSub"
+                  [class.display-contents]="isExpansionSub"
+                  class="d-flex flex-col w-100 p-t-14 expand-box-sub"
+                >
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
+                  </div>
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
+                  </div>
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-100 p-12-8 border-b-1 border-color-gray">
+                 
+                <div class="d-flex w-100" [class.m-b-16]="isExpansionSub"  (click)="handleExpansionSub()">
+                  <span class="w-50px">1</span>
+                  <div class="flex-1">Dakota Rice Dakota Rice</div>
+                  <span
+                    class="cursor-pointer w-100px d-flex justify-content-center"
+                  >
+                    <i
+                      class="material-icons"
+                      style="color: #54ba4a; margin-right: 8px"
+                      >border_color</i
+                    >
+                    <i class="material-icons" style="color: #fc4438">delete</i>
+                  </span>
+                </div>
+                <div
+                  [class.display-none]="!isExpansionSub"
+                  [class.display-contents]="isExpansionSub"
+                  class="d-flex flex-col w-100 p-t-14 expand-box-sub"
+                >
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
+                  </div>
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
+                  </div>
+                  <div class="d-flex w-100">
+                    <div class="w-50px"></div>
+                    <span>+</span>
+                    <span class="p-x-24px"> Dakota Rice Dakota Rice </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <mat-accordion>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title> This is the expansion title </mat-panel-title>
+              <mat-panel-description> This is a summary of the content </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>This is the primary content of the panel.</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header>
+              <mat-panel-title> Self aware panel </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
   </div>
 </div>
