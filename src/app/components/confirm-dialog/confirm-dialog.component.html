@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<div mat-dialog-content>
+  <p>{{ data.message }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button type="submit"  class="btn btn-outline-danger pull-right" (click)="onConfirm()">Delete</button>
+  <button mat-raised-button type="submit" class="btn btn-outline-success pull-right"  (click)="onCancel()">Cancel</button>
+</div>

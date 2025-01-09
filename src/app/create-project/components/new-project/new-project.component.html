@@ -1,0 +1,96 @@
+<form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+  <div class="card">
+    <div style="padding: 15px 20px 0px 20px">
+      <h1 style="margin-bottom: 0">Project Metadata</h1>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <mat-form-field class="example-full-width">
+            <input matInput formControlName="projectName" placeholder="Project Name" type="text" required />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput formControlName="author" placeholder="Author" type="text" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput formControlName="version" placeholder="Version" type="text" />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngFor="let config of configs.controls; let configIndex = index" [formGroup]="config" class="card">
+    <div
+      style="padding: 15px 20px 0px 20px"
+      class="d-flex justify-content-between align-items-center"
+    >
+      <h1 style="margin-bottom: 0">Function Config</h1>
+      <div>
+        <button mat-raised-button type="button" class="btn btn-outline-info" (click)="addConfig()">Add Config</button>
+        <button mat-raised-button type="button" class="btn btn-outline-danger" (click)="removeConfig(configIndex)">
+          Remove Config
+        </button>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput formControlName="featureName" placeholder="Feature Name" type="text" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput formControlName="uiPath" placeholder="UI Path" type="text" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div *ngFor="let variable of config.get('variables').controls; let rowIndex = index" [formGroup]="variable" class="row">
+        <div class="col-md-5">
+          <mat-form-field class="example-full-width">
+            <input matInput formControlName="variableName" placeholder="Variable Name" type="text" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-5">
+          <mat-form-field class="example-full-width">
+            <input matInput formControlName="displayVariableName" placeholder="Display Variable Name" type="text" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-2 d-flex justify-content-center align-items-center">
+          <button
+            mat-raised-button
+            type="button"
+            matTooltip="Add"
+            [matTooltipPosition]="'before'"
+            matTooltipClass="custom-tooltip"
+            class="btn btn-success btn-link btn-sm btn-just-icon"
+            (click)="addRow(configIndex)"
+          >
+            <i class="material-icons">add</i>
+          </button>
+          <button
+            mat-raised-button
+            type="button"
+            matTooltip="Remove"
+            [matTooltipPosition]="'before'"
+            matTooltipClass="custom-tooltip"
+            class="btn btn-danger btn-link btn-sm btn-just-icon"
+            (click)="deleteRow(configIndex, rowIndex)"
+          >
+            <i class="material-icons">close</i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button mat-raised-button type="submit" class="btn btn-primary pull-right">Save</button>
+</form>

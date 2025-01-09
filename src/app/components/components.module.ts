@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { NoDataComponent } from './no-data/no-data.component';
 
 @NgModule({
   imports: [
@@ -14,12 +16,16 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   declarations: [
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    ConfirmDialogComponent,
+    NoDataComponent
   ],
   exports: [
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    ConfirmDialogComponent,
+    NoDataComponent
   ]
 })
 export class ComponentsModule { }

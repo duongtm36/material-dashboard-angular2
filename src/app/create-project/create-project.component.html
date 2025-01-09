@@ -1,0 +1,56 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="p-24 w-100">
+        <div class="card" style="margin-top: 0">
+          <div style="padding: 15px 20px 0px 20px">
+            <h1 style="margin-bottom: 0">Project</h1>
+          </div>
+
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-8">
+                <mat-form-field>
+                  <mat-label>Select project</mat-label>
+                  <div style="top: 300px">
+                    <mat-select
+                      [disableOptionCentering]="true"
+                      [panelClass]="'custom-panel'"
+                    >
+                      <mat-option (click)="updateConfigProjetc(item)" value="item" *ngFor="let item of listItem">
+                        {{ item?.projectName }}
+                      </mat-option>
+                      <mat-option
+                        value=""
+                        *ngIf="listItem.length <= 0"
+                        style="cursor: not-allowed"
+                        disabled
+                        >No Data</mat-option
+                      >
+                    </mat-select>
+                  </div>
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <button
+                  mat-raised-button
+                  type="submit"
+                  class="btn btn-outline-danger pull-right"
+                  (click)="createProjetc()"
+                >
+                  <i class="material-icons icon">add</i> Create
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="isCreate" class="w-100">
+          <app-new-project></app-new-project>
+        </div>
+        <div *ngIf="isUpdate" class="w-100">
+          <app-update-project [items]="items"></app-update-project>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

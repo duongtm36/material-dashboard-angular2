@@ -1,13 +1,13 @@
 <div class="main-content">
   <div class="container-fluid">
-    <div class="row">
+    <div class="row" *ngIf="items.length > 0">
       <div class="col-md-12">
         <div class="card" style="margin-bottom: 50px;" *ngFor="let item of items; let i = index">
           <div
             class="card-header card-header-danger d-flex justify-content-between align-items-center"
           >
             <div>
-              <h4 class="card-title">{{item.project_name}}</h4>
+              <h4 class="card-title">{{item.projectName}}</h4>
               <p class="card-category">{{item.create_date}}</p>
             </div>
             <span class="cursor-pointer" (click)="handleExpansion(i)">
@@ -24,28 +24,35 @@
               <mat-expansion-panel
                 (opened)="panelOpenState.set(true)"
                 (closed)="panelOpenState.set(false)"
-              *ngFor="let feature of item?.features"
+              *ngFor="let feature of item?.configs; let i = index"
 
               >
                 <mat-expansion-panel-header>
                   <mat-panel-title>
-                    <span class="w-50px">1</span>
-                    <div class="flex-1">{{feature?.feature_name}}</div>
+                    <span class="w-50px">{{i + 1}}</span>
+                    <div class="flex-1">{{feature?.featureName}}</div>
                   </mat-panel-title>
                 </mat-expansion-panel-header>
-               <div *ngFor="let variable of feature?.variable_name">
-                <p style="padding-left: 50px">+ {{variable?.label}}</p>
+               <div *ngFor="let variable of feature?.variables">
+                <p style="padding-left: 50px">+ {{variable?.displayVariableName}}</p>
                </div>
              
               </mat-expansion-panel>
               <div style="margin-top: 14px;">
-                <button mat-raised-button type="submit" class="btn btn-danger pull-right">Delete</button>
-                <button mat-raised-button type="submit" class="btn btn-success pull-right">Edit</button>
+                <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="openConfirmDialog(item)">Delete</button>
+                <button mat-raised-button type="submit"  class="btn btn-dark pull-right">Genarate</button>
               </div>
             </div>
           </div>
         </div>
       </div>
+     </div>
+    
+   <div *ngIf="items.length <= 0">
+    <app-no-data></app-no-data>
+   </div>
+      
+     <div >
      </div>
   </div>
 </div>

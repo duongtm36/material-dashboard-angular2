@@ -1,0 +1,24 @@
+.mat-expansion-panel-header {
+  background-color: #f44336;
+
+  border-radius: 8px;
+}
+
+.mat-expansion-panel-header:hover {
+  background-color: #f44336 !important;
+}
+
+.mat-expansion-panel-header.mat-expanded:focus,
+.mat-expansion-panel-header.mat-expanded:hover {
+  background-color: #f44336;
+}
+
+.mat-expansion-panel {
+  background: #7c7b9114;
+  border-radius: 8px !important;
+}
+
+.mat-expansion-panel-header-title {
+  color: white;
+}
+
